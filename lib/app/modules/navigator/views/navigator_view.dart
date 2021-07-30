@@ -31,12 +31,12 @@ class AppNavigatorView extends GetView<NavigatorController> {
             BottomNavigationBarItem(
                 label: "",
                 icon: Icon(
-                  Icons.settings_ethernet_outlined,
+                  Icons.info_outline,
                 )),
             BottomNavigationBarItem(
                 label: "",
                 icon: Icon(
-                  Icons.info_outline,
+                  Icons.settings_ethernet_outlined,
                 )),
             BottomNavigationBarItem(
                 label: "",

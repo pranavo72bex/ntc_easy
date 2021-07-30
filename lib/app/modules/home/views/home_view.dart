@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get/get.dart';
 import 'package:ntcservicecode/app/modules/home/views/widgets/balance_trasfer.dart';
-import 'package:ntcservicecode/app/modules/home/views/widgets/custom_button.dart';
+import 'package:ntcservicecode/app/commonwidgets/custom_button.dart';
 import 'package:ntcservicecode/app/modules/home/views/widgets/forward_number.dart';
 import 'package:ntcservicecode/const/const_padding.dart';
 import '../controllers/home_controller.dart';
