@@ -1,8 +1,11 @@
 // ignore: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:get/state_manager.dart';
+import 'package:ntcservicecode/app/modules/home/controllers/home_controller.dart';
 
-class BalanceTrasfer extends StatelessWidget {
+// ignore: must_be_immutable
+class BalanceTrasfer extends GetView<HomeController> {
   TextEditingController BalanceTrasferNumberEditingController =
       TextEditingController();
   TextEditingController BalanceTrasferAmountEditingController =
@@ -11,65 +14,82 @@ class BalanceTrasfer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TextFormField(
-          keyboardType: TextInputType.number,
-          controller: BalanceTrasferNumberEditingController,
-          decoration: InputDecoration(
-            labelText: "Phone Number",
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+    return Form(
+      key: controller.formKey,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            TextFormField(
+              keyboardType: TextInputType.number,
+              controller: BalanceTrasferNumberEditingController,
+              decoration: InputDecoration(
+                labelText: "Phone Number",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              onSaved: (phoneNumber) {
+                BalanceTrasferNumberEditingController.text = phoneNumber!;
+              },
+              validator: (value) {
+                return controller.validatephone(value!);
+              },
             ),
-          ),
-          onSaved: (phoneNumber) {
-            BalanceTrasferNumberEditingController.text = phoneNumber!;
-          },
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        TextFormField(
-          keyboardType: TextInputType.number,
-          controller: BalanceTrasferAmountEditingController,
-          decoration: InputDecoration(
-            labelText: "RS :",
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+            SizedBox(
+              height: 10,
             ),
-          ),
-          onSaved: (amount) {
-            BalanceTrasferAmountEditingController.text = amount!;
-          },
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        TextFormField(
-          keyboardType: TextInputType.number,
-          controller: BalanceTrasferAmountEditingController,
-          decoration: InputDecoration(
-            labelText: "security Code :",
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+            TextFormField(
+              keyboardType: TextInputType.number,
+              controller: BalanceTrasferAmountEditingController,
+              decoration: InputDecoration(
+                labelText: "RS :",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              onSaved: (amount) {
+                BalanceTrasferAmountEditingController.text = amount!;
+              },
+              validator: (value) {
+                return controller.validateNotEmpty(value!);
+              },
             ),
-          ),
-          onSaved: (code) {
-            SecurityCodeEditingController.text = code!;
-          },
+            SizedBox(
+              height: 10,
+            ),
+            TextFormField(
+              keyboardType: TextInputType.number,
+              controller: SecurityCodeEditingController,
+              decoration: InputDecoration(
+                labelText: "security Code :",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              onSaved: (code) {
+                SecurityCodeEditingController.text = code!;
+              },
+              validator: (value) {
+                return controller.validateNotEmpty(value!);
+              },
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                controller.checkvalidation();
+                if (controller.formKey.currentState!.validate()) {
+                  await FlutterPhoneDirectCaller.callNumber(
+                    "*422*${SecurityCodeEditingController.text}*${BalanceTrasferNumberEditingController.text}*${BalanceTrasferAmountEditingController.text}.#",
+                  );
+                }
+              },
+              child: Text("Trasfer"),
+            )
+          ],
         ),
-        SizedBox(
-          height: 10,
-        ),
-        ElevatedButton(
-          onPressed: () async {
-            await FlutterPhoneDirectCaller.callNumber(
-              "*422*${SecurityCodeEditingController.text}*${BalanceTrasferNumberEditingController.text}*${BalanceTrasferAmountEditingController.text}.#",
-            );
-          },
-          child: Text("Trasfer"),
-        )
-      ],
+      ),
     );
   }
 }

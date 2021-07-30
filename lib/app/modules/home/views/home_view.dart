@@ -54,7 +54,7 @@ class HomeView extends GetView<HomeController> {
                       print("object");
                     },
                     title: 'Check Balance',
-                    icon: Icons.local_offer_outlined,
+                    icon: Icons.attach_money_outlined,
                   ),
                   CustomButton(
                     onpressed: () async {
@@ -64,7 +64,7 @@ class HomeView extends GetView<HomeController> {
                       );
                     },
                     title: 'Balance Trasfer',
-                    icon: Icons.attach_money_sharp,
+                    icon: Icons.send,
                   ),
                   CustomButton(
                     onpressed: () async {
@@ -72,7 +72,7 @@ class HomeView extends GetView<HomeController> {
                       await FlutterPhoneDirectCaller.callNumber(number);
                     },
                     title: 'Check Your Mobile Number',
-                    icon: Icons.phone,
+                    icon: Icons.contact_page,
                   ),
                   CustomButton(
                     onpressed: () async {
@@ -88,7 +88,7 @@ class HomeView extends GetView<HomeController> {
                       await FlutterPhoneDirectCaller.callNumber(number);
                     },
                     title: 'Call Waiting \nActivate',
-                    icon: Icons.timer_off,
+                    icon: Icons.timer,
                   ),
                   CustomButton(
                     onpressed: () async {
@@ -96,7 +96,7 @@ class HomeView extends GetView<HomeController> {
                       await FlutterPhoneDirectCaller.callNumber(number);
                     },
                     title: 'Call Waiting \nCancel',
-                    icon: Icons.timer,
+                    icon: Icons.timer_off,
                   ),
                   CustomButton(
                     onpressed: () async {
@@ -114,12 +114,13 @@ class HomeView extends GetView<HomeController> {
                     icon: Icons.public,
                   ),
                   CustomButton(
-                      onpressed: () async {
-                        String number = "*331*0000#";
-                        await FlutterPhoneDirectCaller.callNumber(number);
-                      },
-                      title: 'ISD Deactivate',
-                      icon: Icons.public_off),
+                    onpressed: () async {
+                      String number = "*331*0000#";
+                      await FlutterPhoneDirectCaller.callNumber(number);
+                    },
+                    title: 'ISD Deactivate',
+                    icon: Icons.public_off,
+                  ),
                   CustomButton(
                     onpressed: () async {
                       _sendSMS("SUB", "1455");
@@ -132,7 +133,7 @@ class HomeView extends GetView<HomeController> {
                       _sendSMS("Unsub", "1455");
                     },
                     title: ' Stop CRBT \n(Ring Tone)',
-                    icon: Icons.music_note,
+                    icon: Icons.music_off_outlined,
                   ),
                   CustomButton(
                     onpressed: () async {
@@ -146,7 +147,7 @@ class HomeView extends GetView<HomeController> {
                       _sendSMS("STOP", "1477");
                     },
                     title: 'NTC load \nDeactivate',
-                    icon: Icons.mobile_friendly,
+                    icon: Icons.mobile_off_outlined,
                   ),
                   CustomButton(
                     onpressed: () async {
@@ -154,7 +155,7 @@ class HomeView extends GetView<HomeController> {
                       await FlutterPhoneDirectCaller.callNumber(number);
                     },
                     title: 'Missed Call \nAlert',
-                    icon: Icons.call_missed,
+                    icon: Icons.phone_missed_outlined,
                   ),
                   CustomButton(
                     onpressed: () async {
@@ -162,15 +163,7 @@ class HomeView extends GetView<HomeController> {
                       await FlutterPhoneDirectCaller.callNumber(number);
                     },
                     title: 'Missed Call \nDeactivate',
-                    icon: Icons.call,
-                  ),
-                  CustomButton(
-                    onpressed: () async {
-                      String number = "1415";
-                      await FlutterPhoneDirectCaller.callNumber(number);
-                    },
-                    title: 'Friend & Family \nActivate',
-                    icon: Icons.call,
+                    icon: Icons.perm_phone_msg_outlined,
                   ),
                   CustomButton(
                     onpressed: () async {
@@ -188,7 +181,7 @@ class HomeView extends GetView<HomeController> {
                       await FlutterPhoneDirectCaller.callNumber(number);
                     },
                     title: 'Call Forward \nCancel',
-                    icon: Icons.call_split_outlined,
+                    icon: Icons.call_merge_sharp,
                   ),
                 ],
               )
@@ -209,5 +202,3 @@ class HomeView extends GetView<HomeController> {
     print(_result);
   }
 }
-
-// ignore: must_be_immutable

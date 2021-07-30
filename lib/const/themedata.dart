@@ -9,10 +9,6 @@ class AppTheme {
     inputDecorationTheme: const InputDecorationTheme(
       errorStyle:
           TextStyle(color: Colors.white), //error text color in inputfiled
-      errorBorder: UnderlineInputBorder(
-        borderSide:
-            BorderSide(color: Colors.white), //error border color in inputfiled
-      ),
     ),
     appBarTheme: const AppBarTheme(
       centerTitle: true,
