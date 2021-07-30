@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import 'package:ntcservicecode/app/modules/find/bindings/find_binding.dart';
 import 'package:ntcservicecode/app/modules/find/views/find_view.dart';
 import 'package:ntcservicecode/app/modules/home/bindings/home_binding.dart';
@@ -8,9 +7,8 @@ import 'package:ntcservicecode/app/modules/info/bindings/info_binding.dart';
 import 'package:ntcservicecode/app/modules/info/views/info_view.dart';
 import 'package:ntcservicecode/app/modules/navigator/bindings/navigator_binding.dart';
 import 'package:ntcservicecode/app/modules/navigator/views/navigator_view.dart';
-import 'package:ntcservicecode/app/modules/settings/bindings/settings_binding.dart';
-import 'package:ntcservicecode/app/modules/settings/views/settings_view.dart';
-
+import 'package:ntcservicecode/app/modules/scanner/bindings/scanner_binding.dart';
+import 'package:ntcservicecode/app/modules/scanner/views/scanner_view.dart';
 part 'app_routes.dart';
 
 class AppPages {
@@ -40,9 +38,9 @@ class AppPages {
       binding: FindBinding(),
     ),
     GetPage(
-      name: _Paths.SETTINGS,
-      page: () => SettingsView(),
-      binding: SettingsBinding(),
+      name: _Paths.scanner,
+      page: () => ScannerView(),
+      binding: ScannerBinding(),
     ),
   ];
 }

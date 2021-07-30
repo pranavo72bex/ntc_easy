@@ -8,7 +8,7 @@ abstract class Routes {
   static const NAVIGATOR = _Paths.NAVIGATOR;
   static const INFO = _Paths.INFO;
   static const FIND = _Paths.FIND;
-  static const SETTINGS = _Paths.SETTINGS;
+  static const scanner = _Paths.scanner;
 }
 
 abstract class _Paths {
@@ -16,5 +16,5 @@ abstract class _Paths {
   static const NAVIGATOR = '/navigator';
   static const INFO = '/info';
   static const FIND = '/find';
-  static const SETTINGS = '/settings';
+  static const scanner = '/scanner';
 }

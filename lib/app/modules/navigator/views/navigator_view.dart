@@ -4,12 +4,12 @@ import 'package:ntcservicecode/app/modules/find/views/find_view.dart';
 import 'package:ntcservicecode/app/modules/home/views/home_view.dart';
 import 'package:ntcservicecode/app/modules/info/views/info_view.dart';
 import 'package:ntcservicecode/app/modules/navigator/controllers/navigator_controller.dart';
-import 'package:ntcservicecode/app/modules/settings/views/settings_view.dart';
+import 'package:ntcservicecode/app/modules/scanner/views/scanner_view.dart';
 import 'package:ntcservicecode/const/color_const.dart';
 
 // ignore: must_be_immutable
 class AppNavigatorView extends GetView<NavigatorController> {
-  List<Widget> _pages = [HomeView(), InfoView(), FindView(), SettingsView()];
+  List<Widget> _pages = [HomeView(), InfoView(), FindView(), ScannerView()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
