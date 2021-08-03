@@ -62,6 +62,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_mobile_vision_2:
+    dependency: "direct main"
+    description:
+      name: flutter_mobile_vision_2
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.11"
   flutter_phone_direct_caller:
     dependency: "direct main"
     description:
