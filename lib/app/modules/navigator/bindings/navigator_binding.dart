@@ -7,6 +7,7 @@ class NavigatorBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<NavigatorController>(
       () => NavigatorController(),
+      fenix: true,
     );
   }
 }

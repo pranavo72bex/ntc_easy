@@ -6,6 +6,7 @@ class ScannerBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<ScannerController>(
       () => ScannerController(),
+      fenix: true,
     );
   }
 }

@@ -83,84 +83,206 @@ class HomeView extends GetView<HomeController> {
                     icon: Icons.supervised_user_circle_sharp,
                   ),
                   CustomButton(
-                    onpressed: () async {
-                      String number = "*43#";
-                      await FlutterPhoneDirectCaller.callNumber(number);
+                    onpressed: () {
+                      Get.defaultDialog(
+                        title: "Call Waiting Activate",
+                        middleText: "",
+                        textCancel: "Cancel",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          String number = "*43#";
+                          await FlutterPhoneDirectCaller.callNumber(number);
+                        },
+                      );
                     },
                     title: 'Call Waiting \nActivate',
                     icon: Icons.timer,
                   ),
                   CustomButton(
-                    onpressed: () async {
-                      String number = "#43#";
-                      await FlutterPhoneDirectCaller.callNumber(number);
+                    onpressed: () {
+                      Get.defaultDialog(
+                        title: "Call Waiting Cancel",
+                        middleText: "",
+                        textCancel: "Cancel",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          String number = "#43#";
+                          await FlutterPhoneDirectCaller.callNumber(number);
+                        },
+                      );
                     },
                     title: 'Call Waiting \nCancel',
                     icon: Icons.timer_off,
                   ),
                   CustomButton(
                     onpressed: () async {
-                      _sendSMS("SCODE", "1415");
+                      Get.defaultDialog(
+                        title: "Security Code",
+                        middleText: "",
+                        textCancel: "Cancel",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          _sendSMS("SCODE", "1415");
+                        },
+                      );
                     },
                     title: 'Security Code',
                     icon: Icons.security,
                   ),
                   CustomButton(
-                    onpressed: () async {
-                      String number = "#331*0000#";
-                      await FlutterPhoneDirectCaller.callNumber(number);
+                    onpressed: () {
+                      Get.defaultDialog(
+                        title: "ISD Activate",
+                        middleText: "",
+                        textCancel: "Cancel",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          String number = "#331*0000#";
+                          await FlutterPhoneDirectCaller.callNumber(number);
+                        },
+                      );
                     },
                     title: 'ISD Activate',
                     icon: Icons.public,
                   ),
                   CustomButton(
-                    onpressed: () async {
-                      String number = "*331*0000#";
-                      await FlutterPhoneDirectCaller.callNumber(number);
+                    onpressed: () {
+                      Get.defaultDialog(
+                        title: "ISD Deactivate",
+                        middleText: "",
+                        textCancel: "Cancel",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          String number = "*331*0000#";
+                          await FlutterPhoneDirectCaller.callNumber(number);
+                        },
+                      );
                     },
                     title: 'ISD Deactivate',
                     icon: Icons.public_off,
                   ),
                   CustomButton(
-                    onpressed: () async {
-                      _sendSMS("SUB", "1455");
+                    onpressed: () {
+                      Get.defaultDialog(
+                        title: "Ring Tone Activate",
+                        middleText: "",
+                        textCancel: "Cancel",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          _sendSMS("SUB", "1455");
+                        },
+                      );
+                      // _sendSMS("SUB", "1455");
                     },
                     title: 'CRBT (Ring Tone)',
                     icon: Icons.music_note,
                   ),
                   CustomButton(
-                    onpressed: () async {
-                      _sendSMS("Unsub", "1455");
+                    onpressed: () {
+                      Get.defaultDialog(
+                        title: "Ring Tone Deactivate",
+                        middleText: "",
+                        textCancel: "Cancel",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          _sendSMS("Unsub", "1455");
+                        },
+                      );
                     },
                     title: ' Stop CRBT \n(Ring Tone)',
                     icon: Icons.music_off_outlined,
                   ),
                   CustomButton(
-                    onpressed: () async {
-                      _sendSMS("START", "1477");
+                    onpressed: () {
+                      Get.defaultDialog(
+                        title: "NTC Loan",
+                        middleText: "",
+                        textCancel: "Cancel",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          _sendSMS("START", "1477");
+                        },
+                      );
                     },
                     title: 'NTC Loan',
                     icon: Icons.mobile_friendly,
                   ),
                   CustomButton(
-                    onpressed: () async {
-                      _sendSMS("STOP", "1477");
+                    onpressed: () {
+                      Get.defaultDialog(
+                        title: "NTC load Deactivate",
+                        textCancel: "Cancel",
+                        middleText: "",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          _sendSMS("STOP", "1477");
+                        },
+                      );
                     },
                     title: 'NTC load \nDeactivate',
                     icon: Icons.mobile_off_outlined,
                   ),
                   CustomButton(
-                    onpressed: () async {
-                      String number = "*1400*1#";
-                      await FlutterPhoneDirectCaller.callNumber(number);
+                    onpressed: () {
+                      Get.defaultDialog(
+                        title: "Missed Call Alert",
+                        textCancel: "Cancel",
+                        middleText: "",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          String number = "*1400*1#";
+                          await FlutterPhoneDirectCaller.callNumber(number);
+                        },
+                      );
                     },
                     title: 'Missed Call \nAlert',
                     icon: Icons.phone_missed_outlined,
                   ),
                   CustomButton(
-                    onpressed: () async {
-                      String number = "*1400*2#";
-                      await FlutterPhoneDirectCaller.callNumber(number);
+                    onpressed: () {
+                      Get.defaultDialog(
+                        title: "Missed call Deactivate",
+                        textCancel: "Cancel",
+                        middleText: "",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          String number = "*1400*2#";
+                          await FlutterPhoneDirectCaller.callNumber(number);
+                        },
+                      );
                     },
                     title: 'Missed Call \nDeactivate',
                     icon: Icons.perm_phone_msg_outlined,
@@ -176,9 +298,20 @@ class HomeView extends GetView<HomeController> {
                     icon: Icons.call_split_outlined,
                   ),
                   CustomButton(
-                    onpressed: () async {
-                      String number = "##002#";
-                      await FlutterPhoneDirectCaller.callNumber(number);
+                    onpressed: () {
+                      Get.defaultDialog(
+                        title: "Call Forward Deactivate",
+                        textCancel: "Cancel",
+                        middleText: "",
+                        textConfirm: "Ok",
+                        onCancel: () {
+                          Get.back();
+                        },
+                        onConfirm: () async {
+                          String number = "##002#";
+                          await FlutterPhoneDirectCaller.callNumber(number);
+                        },
+                      );
                     },
                     title: 'Call Forward \nCancel',
                     icon: Icons.call_merge_sharp,

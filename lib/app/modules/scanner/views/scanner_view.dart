@@ -13,23 +13,26 @@ class ScannerView extends GetView<ScannerController> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              height: 55,
-              width: double.infinity,
-              child: ElevatedButton(
-                child: Text("Scan Recharge Card"),
-                onPressed: () {
-                  controller.startScanner();
-                },
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(controller.texts.toString()),
+              SizedBox(
+                height: 20,
               ),
-            ),
-          ],
+              SizedBox(
+                height: 55,
+                width: double.infinity,
+                child: ElevatedButton(
+                  child: Text("Scan Recharge Card"),
+                  onPressed: () {
+                    controller.startScanner();
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

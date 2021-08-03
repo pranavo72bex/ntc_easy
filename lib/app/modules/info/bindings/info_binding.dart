@@ -7,6 +7,7 @@ class InfoBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<InfoController>(
       () => InfoController(),
+      fenix: true,
     );
   }
 }
